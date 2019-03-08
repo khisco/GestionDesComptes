@@ -186,10 +186,10 @@ namespace GestionBank.Controllers
         {
             try
             {
-             //   var client1 = await gestionnaire.GetClient(id);
-              //  if (client1 == null) return BadRequest("Client Introuvable");
-                //var client2 = await gestionnaire.GetClient(id2);
-               // if (client2 == null) return BadRequest("Client Introuvable");
+                var client1 = await gestionnaire.GetClient(id);
+               if (client1 == null) return BadRequest("Client Introuvable");
+               var client2 = await gestionnaire.GetClient(id2);
+                if (client2 == null) return BadRequest("Client Introuvable");
                 var compte1 = await gestionnaire.ConsulterCompte(id, id1);
                 if (compte1 == null) return NotFound("Compte n'existe pas");
                 var compte2 = await gestionnaire.ConsulterCompte(id2, id3);
